@@ -29,7 +29,42 @@
     .toggle-mode{position:fixed;top:15px;right:15px;padding:8px 14px;border-radius:6px;cursor:pointer;z-index:999;}
     .whatsapp-button{position:fixed;bottom:20px;right:20px;background:#25D366;padding:12px 20px;border-radius:50px;box-shadow:0 4px 8px rgba(0,0,0,0.15);z-index:999;}
     footer{padding:20px;text-align:center;background:#f5f5f5;font-size:14px;color:#666;}
-  </style>
+  </style>.search-section {
+  text-align: center;
+  padding: 30px 20px;
+  background: #f9f9f9;
+  border-bottom: 1px solid #ddd;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin: auto;
+}
+
+#search-input {
+  flex: 1;
+  padding: 12px 18px;
+  border: 2px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-size: 1rem;
+}
+
+#search-form button {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+#search-form button:hover {
+  background: #008ecc;
+}
 </head>
 <body>
   <button class="toggle-mode" onclick="toggleMode()">🌙</button>
@@ -37,6 +72,12 @@
     <h1>WH.Edits</h1>
     <p>Unlock your creativity with AI & Editing</p>
   </header>
+  <section class="search-section" data-aos="fade-down">
+  <form id="search-form" onsubmit="return false;">
+    <input type="text" id="search-input" placeholder="Search content, prompts or apps..." />
+    <button type="submit">🔍</button>
+  </form>
+  </section>
   <nav data-aos="fade-down" data-aos-delay="100">
     <a href="index.html">Home</a>
     <a href="prompt-gallery.html">Gallery</a>
