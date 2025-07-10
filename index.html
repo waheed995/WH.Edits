@@ -1,62 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WH.Edits</title>
-
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- AOS Scroll Animations -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg-light: #f9f9f9;
-      --text-light: #222;
-      --bg-dark: #121212;
-      --text-dark: #f9f9f9;
-      --accent: #00aaff;
-    }
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WH.Edits – AI & Editing Tools</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />  <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--text-light);
+      background-color: #fefefe;
+      color: #222;
       transition: all 0.3s ease;
     }
-
     body.dark {
-      background-color: var(--bg-dark);
-      color: var(--text-dark);
+      background-color: #121212;
+      color: #fefefe;
     }
-
     header {
+      background-color: #00aaff;
+      padding: 20px;
       text-align: center;
-      padding: 80px 20px 40px;
-      background: linear-gradient(to right, #007acc, #00c6ff);
       color: white;
     }
-
-    header h1 {
-      font-size: 48px;
+    h1 {
       margin: 0;
-      animation: fadeInDown 1s ease;
+      font-size: 2.2rem;
+    }
+    .tagline {
+      font-size: 1.1rem;
+      margin-top: 8px;
+    }
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #00aaff;
+    }
+    section {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 999;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
     }
 
-    header p {
-      font-size: 18px;
-      margin-top: 10px;
-      font-weight: 400;
+    .app-article {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 40px;
+      background-color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
     }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+    body.dark .app-article {
+      background-color: #1e1e1e;
+      color: #fefefe;
+      border: 1px solid #444;
     }
-
+    .app-thumb {
+      max-width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #00aaff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download-btn:hover {
+      background-color: #008ecc;
+    }
     .toggle-mode {
       position: fixed;
       top: 15px;
@@ -69,165 +107,68 @@
       font-weight: bold;
       z-index: 999;
     }
-
-    main {
-      max-width: 960px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    section {
-      margin-bottom: 50px;
-    }
-
-    h2 {
-      color: var(--accent);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #777;
-    }
-
-    /* WhatsApp Floating Button */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      z-index: 1000;
-    }
-
-    .whatsapp-button:hover {
-      background: #1ebd5a;
-    }
-  </style>
-</head>
-
+  </style></head>
 <body>
-  <button class="toggle-mode" onclick="toggleMode()">🌙 Dark Mode</button>
-
-  <header data-aos="fade-down">
+  <button class="toggle-mode" onclick="toggleMode()">🌙 Dark Mode</button>  <header>
     <h1>WH.Edits</h1>
-    <p>Unlock your creativity with AI & Editing</p>
-  </header>
-
-  <main>
+    <p class="tagline">Unlock your creativity with AI & Editing</p>
+  </header>  <nav>
+    <a href="index.html">Home</a>
+    <a href="prompt-gallery.html">Prompt Gallery</a>
+  </nav>  <main>
     <section data-aos="fade-up">
-      <h2>📱 Editing Tools</h2>
+      <h2>📲 Top Editing Apps</h2>
       <ul>
         <li><a href="https://capcut.com" target="_blank">CapCut</a> – AI video editing</li>
         <li><a href="https://snapseed.google.com" target="_blank">Snapseed</a> – Photo editor by Google</li>
         <li><a href="https://www.canva.com" target="_blank">Canva</a> – Posters, reels, and designs</li>
       </ul>
-    </section>
+    </section><section data-aos="fade-up" data-aos-delay="100">
+  <h2>🤖 AI Image Prompts</h2>
+  <ul>
+    <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
+    <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
+    <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
+  </ul>
+</section>
 
-    <section data-aos="fade-up" data-aos-delay="100">
-      <h2>🤖 AI Image Prompts</h2>
-      <ul>
-        <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
-        <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
-        <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
-      </ul>
-    </section>
+<section data-aos="fade-up" data-aos-delay="200">
+  <h2>ℹ️ About WH.Edits</h2>
+  <p>WH.Edits is a free platform where you can explore top editing tools and trending AI prompts to level up your creative projects. Whether you're editing reels or generating viral AI content — we've got you covered!</p>
+</section>
 
-    <section data-aos="fade-up" data-aos-delay="200">
-      <h2>ℹ️ About WH.Edits</h2>
-      <p>WH.Edits is a free platform where you can explore top editing tools and trending AI prompts to level up your creative projects. Whether you're editing reels or generating viral AI content — we've got you covered!</p>
-    </section>
-  </main>
 <section data-aos="fade-up">
   <h2>🖼️ Explore Our AI Prompt Gallery</h2>
   <p>See real examples of AI-generated images with the prompts used to create them.</p>
   <a href="prompt-gallery.html" style="display:inline-block; margin-top:10px; padding:10px 20px; background:#00aaff; color:white; text-decoration:none; border-radius:6px; font-weight:bold;">Open Prompt Gallery</a>
 </section>
-  <a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 Contact Us</a>
+
+<section data-aos="fade-up">
+  <article class="app-article">
+    <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb" />
+    <h2>100+ Lightroom Presets Pack (Mobile & Desktop)</h2>
+    <p><strong>Arrival:</strong> Specially curated Lightroom Presets collection to instantly enhance your photos. Compatible with Lightroom Mobile & Desktop.</p>
+    <p>
+      This premium bundle includes 100+ presets across multiple themes: Cinematic, Portrait, Teal & Orange, Dark Moody, Warm Tones, and more. Designed for influencers, photographers, and content creators who want quick, stunning photo edits with one click.
+    </p>
+    <ul>
+      <li>✔️ 100+ Presets</li>
+      <li>✔️ Lightroom Mobile & Desktop Support</li>
+      <li>✔️ Free to Download</li>
+      <li>✔️ No Signup Needed</li>
+    </ul>
+    <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
+  </article>
+</section>
+
+  </main><a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 Contact Us</a>
 
   <footer>
     © 2025 WH.Edits by Waheed Hussain
-  </footer>
-
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
-
     function toggleMode() {
       document.body.classList.toggle('dark');
     }
-  </script>
-</body>
+  </script></body>
 </html>
-<article class="app-article" data-aos="fade-up">
-  <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb" />
-
-  <h2>100+ Lightroom Presets Pack (Mobile & Desktop)</h2>
-
-  <p><strong>Arrival:</strong> Specially curated Lightroom Presets collection to instantly enhance your photos. Compatible with Lightroom Mobile & Desktop.</p>
-
-  <p>
-    This premium bundle includes 100+ presets across multiple themes: Cinematic, Portrait, Teal & Orange, Dark Moody, Warm Tones, and more. Designed for influencers, photographers, and content creators who want quick, stunning photo edits with one click.
-  </p>
-
-  <ul>
-    <li>✔️ 100+ Presets</li>
-    <li>✔️ Lightroom Mobile & Desktop Support</li>
-    <li>✔️ Free to Download</li>
-    <li>✔️ No Signup Needed</li>
-  </ul>
-
-  <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
-</article>
-.app-article {
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 40px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
-}
-
-body.dark .app-article {
-  background-color: #1e1e1e;
-  color: #fefefe;
-  border: 1px solid #444;
-}
-
-.app-thumb {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.download-btn {
-  display: inline-block;
-  margin-top: 20px;
-  background: #00aaff;
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.download-btn:hover {
-  background-color: #008ecc;
-}
