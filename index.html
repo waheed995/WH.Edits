@@ -1,8 +1,17 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WH.Edits — AI & Editing Hub</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />  <!-- AOS Animation Library -->  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />  <style>
+  <title>WH.Edits — AI & Editing Hub</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
     :root {
       --primary: #00aaff;
       --bg: #fff;
@@ -182,23 +191,32 @@
       cursor: pointer;
       font-size: 1rem;
     }
-  </style></head>
+  </style>
+</head>
 <body>
-  <button class="toggle-mode" onclick="toggleMode()">🌙</button>  <header>
+  <button class="toggle-mode" onclick="toggleMode()">🌙</button>
+
+  <header>
     <h1>WH.Edits</h1>
     <p>Unlock your creativity with AI & Editing</p>
-  </header>  <section class="search-section">
+  </header>
+
+  <section class="search-section">
     <form id="search-form" onsubmit="return false;">
       <input type="text" id="search-input" placeholder="Search content, prompts or apps..." />
       <button type="submit">🔍</button>
     </form>
-  </section>  <nav>
+  </section>
+
+  <nav>
     <a href="index.html">Home</a>
     <a href="prompt-gallery.html">Gallery</a>
     <a href="#presets">Presets</a>
     <a href="#apps">Apps</a>
     <a href="mailto:youremail@example.com">Contact</a>
-  </nav>  <main>
+  </nav>
+
+  <main>
     <section>
       <h2>📲 Top Editing Apps</h2>
       <ul>
@@ -206,47 +224,55 @@
         <li><a href="https://snapseed.google.com" target="_blank">Snapseed</a> – Photo editor by Google</li>
         <li><a href="https://www.canva.com" target="_blank">Canva</a> – Posters, reels, and designs</li>
       </ul>
-    </section><section>
-  <h2>🤖 AI Image Prompts</h2>
-  <ul>
-    <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
-    <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
-    <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
-  </ul>
-</section>
+    </section>
 
-<section>
-  <h2>🖼️ Prompt Gallery</h2>
-  <a href="prompt-gallery.html"><button>Open Gallery</button></a>
-</section>
+    <section>
+      <h2>🤖 AI Image Prompts</h2>
+      <ul>
+        <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
+        <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
+        <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
+      </ul>
+    </section>
 
-<section id="presets">
-  <article class="app-article">
-    <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb" />
-    <h2>100+ Lightroom Presets Pack</h2>
-    <p><strong>Arrival:</strong> Specially curated presets for quick, professional photo edits.</p>
-    <ul>
-      <li>✔️ 100+ presets</li>
-      <li>✔️ Mobile & Desktop Support</li>
-      <li>✔️ Free to download</li>
-    </ul>
-    <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
-  </article>
-</section>
+    <section>
+      <h2>🖼️ Prompt Gallery</h2>
+      <a href="prompt-gallery.html"><button>Open Gallery</button></a>
+    </section>
 
-<section id="apps">
-  <h2>📦 Featured Apps</h2>
-  <!-- Add more app-article cards here -->
-</section>
+    <section id="presets">
+      <article class="app-article">
+        <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb" />
+        <h2>100+ Lightroom Presets Pack</h2>
+        <p><strong>Arrival:</strong> Specially curated presets for quick, professional photo edits.</p>
+        <ul>
+          <li>✔️ 100+ presets</li>
+          <li>✔️ Mobile & Desktop Support</li>
+          <li>✔️ Free to download</li>
+        </ul>
+        <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
+      </article>
+    </section>
 
-  </main><a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 WhatsApp Us</a>
+    <section id="apps">
+      <h2>📦 Featured Apps</h2>
+      <!-- Add more app-article cards here -->
+    </section>
+  </main>
+
+  <a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 WhatsApp Us</a>
 
   <footer>
     © 2025 WH.Edits by Waheed Hussain
-  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
+  </footer>
+
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
     AOS.init();
     function toggleMode() {
       document.body.classList.toggle('dark');
     }
-  </script></body>
+  </script>
+</body>
 </html>
