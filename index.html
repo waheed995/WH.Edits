@@ -1,131 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WH.Edits — AI & Editing Hub</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-  <style>
-    /* Base + Variables */
-    :root {--primary:#00aaff;--bg:#fff;--darkbg:#121212;--txt:#222;--darktxt:#fefefe;}
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:'Poppins',sans-serif; background:var(--bg);color:var(--txt);transition:0.3s;}
-    body.dark{background:var(--darkbg);color:var(--darktxt);}
-    img{max-width:100%;border-radius:8px;}
-    a{color:var(--primary);text-decoration:none;}
-    button, .download-btn{background:var(--primary);color:#fff;border:none;border-radius:6px;padding:10px 18px;cursor:pointer;}
-    button:hover, .download-btn:hover{background:#008ecc;}
-    h2{margin-bottom:10px;color:var(--primary);}
-    section{padding:40px 20px;}
-    nav{display:flex;justify-content:center;gap:20px;padding:20px;background:#f5f5f5;box-shadow:0 1px 5px rgba(0,0,0,0.1);}
-    nav a{font-weight:600;}
-    header{text-align:center;padding:60px 20px;background:var(--primary);color:#fff;}
-    header h1{font-size:2.8rem;} header p{margin-top:10px;font-size:1.1rem;}
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:30px;}
-    .prompt-card, .app-article{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:transform 0.3s;}
-    body.dark .prompt-card, body.dark .app-article{background:#1e1e1e;color:#fefefe;border:1px solid #444;}
-    .prompt-card img{width:100%;margin-bottom:15px;}
-    .app-article{margin-top:30px;}
-    .toggle-mode{position:fixed;top:15px;right:15px;padding:8px 14px;border-radius:6px;cursor:pointer;z-index:999;}
-    .whatsapp-button{position:fixed;bottom:20px;right:20px;background:#25D366;padding:12px 20px;border-radius:50px;box-shadow:0 4px 8px rgba(0,0,0,0.15);z-index:999;}
-    footer{padding:20px;text-align:center;background:#f5f5f5;font-size:14px;color:#666;}
-  </style>.search-section {
-  text-align: center;
-  padding: 30px 20px;
-  background: #f9f9f9;
-  border-bottom: 1px solid #ddd;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WH.Edits — AI & Editing Hub</title>  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />  <!-- AOS Animation Library -->  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />  <style>
+    :root {
+      --primary: #00aaff;
+      --bg: #fff;
+      --darkbg: #121212;
+      --txt: #222;
+      --darktxt: #fefefe;
+    }
 
-#search-form {
-  display: flex;
-  justify-content: center;
-  max-width: 600px;
-  margin: auto;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-#search-input {
-  flex: 1;
-  padding: 12px 18px;
-  border: 2px solid #ccc;
-  border-radius: 8px 0 0 8px;
-  outline: none;
-  font-size: 1rem;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--txt);
+      transition: 0.3s;
+    }
 
-#search-form button {
-  background: var(--primary);
-  color: #fff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 0 8px 8px 0;
-  cursor: pointer;
-  font-size: 1rem;
-}
+    body.dark {
+      background: var(--darkbg);
+      color: var(--darktxt);
+    }
 
-#search-form button:hover {
-  background: #008ecc;
-}
-</head>
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    button, .download-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 18px;
+      cursor: pointer;
+    }
+
+    button:hover, .download-btn:hover {
+      background: #008ecc;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      background: #f5f5f5;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      font-weight: 600;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background: var(--primary);
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .prompt-card, .app-article {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+
+    body.dark .prompt-card, body.dark .app-article {
+      background: #1e1e1e;
+      color: #fefefe;
+      border: 1px solid #444;
+    }
+
+    .prompt-card img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .app-article {
+      margin-top: 30px;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background: #f5f5f5;
+      font-size: 14px;
+      color: #666;
+    }
+
+    /* Search Styles */
+    .search-section {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f9f9f9;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #search-form {
+      display: flex;
+      justify-content: center;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    #search-input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 2px solid #ccc;
+      border-radius: 8px 0 0 8px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    #search-form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+  </style></head>
 <body>
-  <button class="toggle-mode" onclick="toggleMode()">🌙</button>
-  <header data-aos="fade-down">
+  <button class="toggle-mode" onclick="toggleMode()">🌙</button>  <header>
     <h1>WH.Edits</h1>
     <p>Unlock your creativity with AI & Editing</p>
-  </header>
-  <section class="search-section" data-aos="fade-down">
-  <form id="search-form" onsubmit="return false;">
-    <input type="text" id="search-input" placeholder="Search content, prompts or apps..." />
-    <button type="submit">🔍</button>
-  </form>
-  </section>
-  <nav data-aos="fade-down" data-aos-delay="100">
+  </header>  <section class="search-section">
+    <form id="search-form" onsubmit="return false;">
+      <input type="text" id="search-input" placeholder="Search content, prompts or apps..." />
+      <button type="submit">🔍</button>
+    </form>
+  </section>  <nav>
     <a href="index.html">Home</a>
     <a href="prompt-gallery.html">Gallery</a>
     <a href="#presets">Presets</a>
     <a href="#apps">Apps</a>
     <a href="mailto:youremail@example.com">Contact</a>
-  </nav>
-  <main>
-    <section data-aos="fade-up">
+  </nav>  <main>
+    <section>
       <h2>📲 Top Editing Apps</h2>
       <ul>
         <li><a href="https://capcut.com" target="_blank">CapCut</a> – AI video editing</li>
         <li><a href="https://snapseed.google.com" target="_blank">Snapseed</a> – Photo editor by Google</li>
         <li><a href="https://www.canva.com" target="_blank">Canva</a> – Posters, reels, and designs</li>
       </ul>
-    </section>
-    <section data-aos="fade-up">
-      <h2>🤖 AI Image Prompts</h2>
-      <ul>
-        <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
-        <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
-        <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
-      </ul>
-    </section>
-    <section data-aos="fade-up">
-      <h2>🖼️ Prompt Gallery</h2>
-      <a href="prompt-gallery.html"><button>Open Gallery</button></a>
-    </section>
-    <section id="presets" data-aos="fade-up">
-      <article class="app-article">
-        <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb"/>
-        <h2>100+ Lightroom Presets Pack</h2>
-        <p><strong>Arrival:</strong> Specially curated presets for quick, professional photo edits.</p>
-        <ul><li>✔️ 100+ presets</li><li>✔️ Mobile & Desktop Support</li><li>✔️ Free to download</li></ul>
-        <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
-      </article>
-    </section>
-    <section id="apps" data-aos="fade-up">
-      <h2>📦 Featured Apps</h2>
-      <!-- Add more app-article cards here -->
-    </section>
-  </main>
-  <a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 WhatsApp Us</a>
-  <footer data-aos="fade-up">© 2025 WH.Edits by Waheed Hussain</footer>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
+    </section><section>
+  <h2>🤖 AI Image Prompts</h2>
+  <ul>
+    <li>"A man in a black suit under dramatic studio lighting — ultra-realistic portrait"</li>
+    <li>"A boy riding a black horse through desert at sunset — cinematic scene"</li>
+    <li>"Model posing in front of 4-5 Land Cruisers parked in the desert"</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🖼️ Prompt Gallery</h2>
+  <a href="prompt-gallery.html"><button>Open Gallery</button></a>
+</section>
+
+<section id="presets">
+  <article class="app-article">
+    <img src="images/lightroom-100-presets.jpg" alt="Lightroom Presets Thumbnail" class="app-thumb" />
+    <h2>100+ Lightroom Presets Pack</h2>
+    <p><strong>Arrival:</strong> Specially curated presets for quick, professional photo edits.</p>
+    <ul>
+      <li>✔️ 100+ presets</li>
+      <li>✔️ Mobile & Desktop Support</li>
+      <li>✔️ Free to download</li>
+    </ul>
+    <a href="https://drive.google.com/uc?export=download&id=1pChVmSTBApkjq0w36ZvobHq9551Rno9P" class="download-btn" target="_blank">📥 Download Now</a>
+  </article>
+</section>
+
+<section id="apps">
+  <h2>📦 Featured Apps</h2>
+  <!-- Add more app-article cards here -->
+</section>
+
+  </main><a class="whatsapp-button" href="https://wa.me/923465392064" target="_blank">📞 WhatsApp Us</a>
+
+  <footer>
+    © 2025 WH.Edits by Waheed Hussain
+  </footer>  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  <script>
     AOS.init();
-    function toggleMode(){document.body.classList.toggle('dark')}
-  </script>
-</body>
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script></body>
 </html>
