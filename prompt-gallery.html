@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Prompt Gallery | WH.Edits</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-light: #fefefe;
+      --text-light: #222;
+      --bg-dark: #121212;
+      --text-dark: #fefefe;
+      --accent: #00aaff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      transition: all 0.3s ease;
+    }
+
+    body.dark {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      margin-top: 30px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .prompt-card {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background-color: white;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    body.dark .prompt-card {
+      background-color: #1e1e1e;
+    }
+
+    .prompt-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .prompt-card p {
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    .toggle-mode {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #eee;
+      border: none;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: bold;
+      z-index: 999;
+    }
+
+    .toggle-mode:hover {
+      background-color: #ddd;
+    }
+
+    a.back {
+      display: inline-block;
+      margin-top: 20px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toggle-mode" onclick="toggleMode()">🌙 Dark Mode</button>
+
+  <div class="container">
+    <h1 data-aos="fade-down">AI Prompt Gallery</h1>
+
+    <div class="gallery-grid">
+
+      <!-- Card 1 -->
+      <div class="prompt-card" data-aos="fade-up">
+        <img src="images/park-road-man.jpg" alt="Park Road AI Prompt" />
+        <p><strong>Prompt:</strong> A cinematic portrait of a confident young man standing under a street lamp on Park Road at night, city lights glowing on the wet pavement, captured in high definition DSLR style — ultra-realistic, moody urban vibe.</p>
+      </div>
+
+      <!-- Card 2 (placeholder) -->
+      <div class="prompt-card" data-aos="fade-up" data-aos-delay="100">
+        <img src="images/placeholder.jpg" alt="Future Prompt" />
+        <p><strong>Prompt:</strong> “A man riding a black horse through the desert at golden hour, cinematic lighting, dust flying, dramatic tone”</p>
+      </div>
+
+      <!-- Add more cards below this -->
+      
+    </div>
+
+    <a href="index.html" class="back">← Back to Home</a>
+
+    <footer>© 2025 WH.Edits</footer>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
